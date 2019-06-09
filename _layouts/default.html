@@ -1,0 +1,70 @@
+<!doctype html>
+<html class="no-js" lang="{{ site.lang | default: "en-US" }}">
+
+{% include head.html %}
+
+<body>
+    <!--[if IE]><p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p><![endif]-->
+
+    <section class="block block-hero-2">
+        <div class="container">
+            <div class="columns">
+                <div class="column text">
+                    <h1>
+                        <span class="light">{{ site.title }}</span>
+                        <br />
+                        <strong>{{ site.subtitle }}</strong>
+                    </h1>
+                    <p>{{ site.description }}</p>
+                    {% if site.github.is_project_page %}
+                        <a href="{{ site.github.repository_url }}" class="button primary inverted">View on GitHub</a>
+                    {% endif %}
+                </div>
+                <div class="column text">
+                    <h2>Live demo</h2>
+                    <p>Your current device/environment settings are…</p>
+                    <ul class="demos">
+                        {% for magica11y_api_method in site.magica11y_api_methods %}
+                            <li class="demo">
+                                <code class="demo__api-method demo__api-method--call">{{ magica11y_api_method }}()</code>
+                                <span class="demo__equals">is</span>
+                                <strong><code id="{{ magica11y_api_method }}ReturnValue" class="demo__api-method demo__api-method--return"></code></strong>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                    <p>
+                        <button id="refreshDemo" class="button primary inverted">Refresh</button>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/magica11y@1.0.0/dist/magica11y.all.js"></script>
+
+    <script>
+        (function (window, document, magica11y) {
+            'use strict';
+
+            var magica11yAPIMethods = [];
+            {% for magica11y_api_method in site.magica11y_api_methods %}
+                magica11yAPIMethods.push('{{ magica11y_api_method }}');
+            {% endfor %}
+
+            var fallbackMessage = 'not available';
+            var calcuateMagica11ySettings = function() {
+                magica11yAPIMethods.forEach(function (magica11yAPIMethod) {
+                    var returnValueElement = document.querySelector(`#${magica11yAPIMethod}ReturnValue`);
+                    returnValueElement.textContent = magica11y[magica11yAPIMethod]() || fallbackMessage;
+                });
+            };
+
+            var refreshDemoElement = document.querySelector('#refreshDemo');
+            refreshDemoElement.addEventListener('click', calcuateMagica11ySettings);
+
+            calcuateMagica11ySettings();
+        })(window, window.document, window.magica11y.all);
+    </script>
+</body>
+
+</html>
