@@ -1,7 +1,3 @@
 title: "Magica11y"
 subtitle: "a Jekyll theme"
 description: "A Jekyll theme based on the Ubuild Blocks theme"
-
-magica11y_api_methods:
-  - prefersReducedMotion
-  - lightLevel

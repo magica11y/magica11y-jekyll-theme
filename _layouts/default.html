@@ -1,70 +1,104 @@
-<!doctype html>
-<html class="no-js" lang="{{ site.lang | default: "en-US" }}">
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Magica11y</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="assets/css/main.css" />
+        <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    </head>
+    <body>
 
-{% include head.html %}
+        <!-- Wrapper -->
+        <div id="wrapper">
 
-<body>
-    <!--[if IE]><p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p><![endif]-->
+            <!-- Header -->
+            <header id="header" class="alt">
+                <span class="logo"><img src="https://cdn.jsdelivr.net/npm/emojione-assets@3.0.0/png/128/1f52e.png" alt="Crystal ball" width="128" height="128" /></span>
+                <h1>Magica11y</h1>
+                <p><b>A suite of functions to detect “user-preference” and “environment” media features</b>
+                <p>Handcrafted with &hearts; by <a href="https://twitter.com/rishabhsrao">@rishabhsrao</a></p>
+            </header>
 
-    <section class="block block-hero-2">
-        <div class="container">
-            <div class="columns">
-                <div class="column text">
-                    <h1>
-                        <span class="light">{{ site.title }}</span>
-                        <br />
-                        <strong>{{ site.subtitle }}</strong>
-                    </h1>
-                    <p>{{ site.description }}</p>
-                    {% if site.github.is_project_page %}
-                        <a href="{{ site.github.repository_url }}" class="button primary inverted">View on GitHub</a>
-                    {% endif %}
-                </div>
-                <div class="column text">
-                    <h2>Live demo</h2>
-                    <p>Your current device/environment settings are…</p>
-                    <ul class="demos">
-                        {% for magica11y_api_method in site.magica11y_api_methods %}
-                            <li class="demo">
-                                <code class="demo__api-method demo__api-method--call">{{ magica11y_api_method }}()</code>
-                                <span class="demo__equals">is</span>
-                                <strong><code id="{{ magica11y_api_method }}ReturnValue" class="demo__api-method demo__api-method--return"></code></strong>
-                            </li>
-                        {% endfor %}
+            <div id="main">
+                <section id="intro" class="main">
+                    <div class="spotlight">
+                        <div class="content">
+                            <header class="major">
+                                <h2>Magica11y</h2>
+                            </header>
+                            <p>Magica11y provides a suite of functions to detect “user-preference” and “environment” media features. Magica11y functions are awesome because…</p>
+                            <ul>
+                                <li>They have <strong>zero</strong> dependencies</li>
+                                <li>They’re <strong>lightweight</strong>; e.g. <code>prefersReducedMotion()</code> is just <a href="https://bundlephobia.com/result?p=@magica11y/prefers-reduced-motion"><img src="https://img.shields.io/bundlephobia/min/@magica11y/prefers-reduced-motion.svg?style=flat-square&amp;label" alt="Bundlephobia" title="Bundle size (minified)"></a> minified, or <a href="https://bundlephobia.com/result?p=@magica11y/prefers-reduced-motion"><img src="https://img.shields.io/bundlephobia/minzip/@magica11y/prefers-reduced-motion.svg?style=flat-square&amp;label" alt="Bundlephobia" title="Bundle size (minified+gzipped)"></a> minified &amp; gzipp’d</li>
+                                <li>They use the <strong><a href="https://developer.mozilla.org/docs/Web/API/Window/matchMedia"><code>window.matchMedia</code></a></strong> API underneath</li>
+                                <li>They’re optimized for <strong>performance</strong>; all the module functions are designed in such a way that they exit early</li>
+                                <li>They provide a <strong>clean</strong>, <strong>well-documented</strong> and <strong>semantic</strong> API to work with</li>
+                            </ul>
+                        </div>
+                        <span class="image">
+                            <img src="https://avatars1.githubusercontent.com/u/51175737" alt="Showing golden cards and game dies" />
+                        </span>
+                    </div>
+                </section>
+
+                <section id="first" class="main special">
+                    <header class="major">
+                        <h2>Functions</h2>
+                    </header>
+                    <ul class="features">
+                        <li>
+                            <img src="https://cdn.jsdelivr.net/npm/emojione-assets@3.0.0/png/128/1f4fa.png" alt="Television" width="128" height="128" />
+                            <h3><code>environment-blending</code></h3>
+                            <p>Your current environment display blending is <strong id="environmentBlendingResult"></strong>.</p>
+                            <a href="https://github.com/magica11y/environment-blending" class="button">View on GitHub</a>
+                        </li>
+                        <li>
+                            <img src="https://cdn.jsdelivr.net/npm/emojione-assets@3.0.0/png/128/1f56f.png" alt="Candle" width="128" height="128" />
+                            <h3><code>light-level</code></h3>
+                            <p>Your current ambient light-level is <strong id="lightLevelResult"></strong>.</p>
+                            <a href="https://github.com/magica11y/light-level" class="button">View on GitHub</a>
+                        </li>
+                        <li>
+                            <img src="https://cdn.jsdelivr.net/npm/emojione-assets@3.0.0/png/128/1f3a2.png" alt="Roller coaster" width="128" height="128" />
+                            <h3><code>prefers-reduced-motion</code></h3>
+                            <p>Your current motion preference is <strong id="prefersReducedMotionResult"></strong>.</p>
+                            <a href="https://github.com/magica11y/prefers-reduced-motion" class="button">View on GitHub</a>
+                        </li>
                     </ul>
-                    <p>
-                        <button id="refreshDemo" class="button primary inverted">Refresh</button>
-                    </p>
-                </div>
+                </section>
             </div>
+
+            <footer id="footer">
+                <section>
+                    <h2>Magica11y</h2>
+                    <p>Licensed under <a href="https://opensource.org/licenses/MIT">MIT</a>.</p>
+                    <a href="https://github.com/magica11y" class="button">View on GitHub</a></li>
+                </section>
+                <p class="copyright">Website theme modified from <a href="https://html5up.net/stellar">Stellar by HTML5 UP</a></p>
+            </footer>
         </div>
-    </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/magica11y@1.0.0/dist/magica11y.all.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@magica11y/environment-blending@latest/dist/magica11y.environmentBlending.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@magica11y/light-level@latest/dist/magica11y.lightLevel.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@magica11y/prefers-reduced-motion@latest/dist/magica11y.prefersReducedMotion.min.js"></script>
+        <script>
+            (function(magica11y) {
+                'use strict';
 
-    <script>
-        (function (window, document, magica11y) {
-            'use strict';
+                const magica11yAPIMethods = [
+                    'environmentBlending',
+                    'lightLevel',
+                    'prefersReducedMotion',
+                ];
 
-            var magica11yAPIMethods = [];
-            {% for magica11y_api_method in site.magica11y_api_methods %}
-                magica11yAPIMethods.push('{{ magica11y_api_method }}');
-            {% endfor %}
+                const fallbackMessage = 'not available';
 
-            var fallbackMessage = 'not available';
-            var calcuateMagica11ySettings = function() {
-                magica11yAPIMethods.forEach(function (magica11yAPIMethod) {
-                    var returnValueElement = document.querySelector(`#${magica11yAPIMethod}ReturnValue`);
-                    returnValueElement.textContent = magica11y[magica11yAPIMethod]() || fallbackMessage;
+                magica11yAPIMethods.forEach(function(magica11yAPIMethod) {
+                    const resultElement = document.querySelector(`#${magica11yAPIMethod}Result`);
+                    resultElement.textContent = magica11y[magica11yAPIMethod].default() || fallbackMessage;
                 });
-            };
-
-            var refreshDemoElement = document.querySelector('#refreshDemo');
-            refreshDemoElement.addEventListener('click', calcuateMagica11ySettings);
-
-            calcuateMagica11ySettings();
-        })(window, window.document, window.magica11y.all);
-    </script>
-</body>
-
+            })(window.magica11y);
+        </script>
+    </body>
 </html>
