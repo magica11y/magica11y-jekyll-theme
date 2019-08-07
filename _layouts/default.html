@@ -27,7 +27,7 @@
                             <p>Magica11y functions are awesome because…</p>
                             <ul>
                                 <li>They have <strong>zero</strong> dependencies</li>
-                                <li>They’re <strong>lightweight</strong>; e.g. <code>prefersReducedMotion()</code> is just <a href="https://bundlephobia.com/result?p=@magica11y/prefers-reduced-motion"><img src="https://img.shields.io/bundlephobia/min/@magica11y/prefers-reduced-motion.svg?style=flat-square&amp;label" alt="Bundlephobia" title="Bundle size (minified)"></a> minified, or <a href="https://bundlephobia.com/result?p=@magica11y/prefers-reduced-motion"><img src="https://img.shields.io/bundlephobia/minzip/@magica11y/prefers-reduced-motion.svg?style=flat-square&amp;label" alt="Bundlephobia" title="Bundle size (minified+gzipped)"></a> minified &amp; gzipp’d</li>
+                                <li>They’re <strong>lightweight</strong></li>
                                 <li>They use the <strong><a href="https://developer.mozilla.org/docs/Web/API/Window/matchMedia"><code>window.matchMedia</code></a></strong> API underneath</li>
                                 <li>They’re optimized for <strong>performance</strong>; all the module functions are designed in such a way that they exit early</li>
                                 <li>They provide a <strong>clean</strong>, <strong>well-documented</strong> and <strong>semantic</strong> API to work with</li>
@@ -40,21 +40,45 @@
                     <ul class="features">
                         <li>
                             <img src="https://cdn.jsdelivr.net/npm/emojione-assets@3.0.0/png/128/1f4fa.png" alt="Television" width="128" height="128" />
-                            <h3><code>environment-blending</code></h3>
-                            <p>Your current environment display blending is <strong id="environmentBlendingResult"></strong>.</p>
+                            <h3><code>environment-blending()</code></h3>
+                            <p>Your current environment display blending is <strong id="environmentBlendingResult">&#9676;</strong>.</p>
                             <a href="https://github.com/magica11y/environment-blending" class="button">View on GitHub</a>
                         </li>
                         <li>
+                            <img src="https://cdn.jsdelivr.net/npm/emojione-assets@3.0.0/png/128/1f3a8.png" alt="Artist palette" width="128" height="128" />
+                            <h3><code>forced-colors()</code></h3>
+                            <p>Your current forced-colors setting is <strong id="forcedColorsResult"></strong>.</p>
+                            <a href="https://github.com/magica11y/forced-colors" class="button">View on GitHub</a>
+                        </li>
+                        <li>
+                            <img src="https://cdn.jsdelivr.net/npm/emojione-assets@3.0.0/png/128/1f31a.png" alt="New moon" width="128" height="128" />
+                            <h3><code>inverted-colors()</code></h3>
+                            <p>Your current inverted color setting is <strong id="invertedColorsResult"></strong>.</p>
+                            <a href="https://github.com/magica11y/inverted-colors" class="button">View on GitHub</a>
+                        </li>
+                        <li>
                             <img src="https://cdn.jsdelivr.net/npm/emojione-assets@3.0.0/png/128/1f56f.png" alt="Candle" width="128" height="128" />
-                            <h3><code>light-level</code></h3>
+                            <h3><code>light-level()</code></h3>
                             <p>Your current ambient light-level is <strong id="lightLevelResult"></strong>.</p>
                             <a href="https://github.com/magica11y/light-level" class="button">View on GitHub</a>
                         </li>
                         <li>
+                            <img src="https://cdn.jsdelivr.net/npm/emojione-assets@3.0.0/png/128/1f506.png" alt="High brightness" width="128" height="128" />
+                            <h3><code>prefers-contrast()</code></h3>
+                            <p>Your current contrast preference is <strong id="prefersContrastResult"></strong>.</p>
+                            <a href="https://github.com/magica11y/prefers-contrast" class="button">View on GitHub</a>
+                        </li>
+                        <li>
                             <img src="https://cdn.jsdelivr.net/npm/emojione-assets@3.0.0/png/128/1f3a2.png" alt="Roller coaster" width="128" height="128" />
-                            <h3><code>prefers-reduced-motion</code></h3>
+                            <h3><code>prefers-reduced-motion()</code></h3>
                             <p>Your current motion preference is <strong id="prefersReducedMotionResult"></strong>.</p>
                             <a href="https://github.com/magica11y/prefers-reduced-motion" class="button">View on GitHub</a>
+                        </li>
+                        <li>
+                            <img src="https://cdn.jsdelivr.net/npm/emojione-assets@3.0.0/png/128/1f317.png" alt="Last quarter moon" width="128" height="128" />
+                            <h3><code>prefers-color-scheme()</code></h3>
+                            <p>Your color scheme preference is <strong id="prefersColorSchemeResult"></strong>.</p>
+                            <a href="https://github.com/magica11y/prefers-color-scheme" class="button">View on GitHub</a>
                         </li>
                     </ul>
                 </section>
@@ -71,7 +95,11 @@
         </div>
 
         <script src="https://cdn.jsdelivr.net/npm/@magica11y/environment-blending@latest/dist/magica11y.environmentBlending.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@magica11y/forced-colors@latest/dist/magica11y.forcedColors.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@magica11y/inverted-colors@latest/dist/magica11y.invertedColors.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@magica11y/light-level@latest/dist/magica11y.lightLevel.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@magica11y/prefers-color-scheme@latest/dist/magica11y.prefersColorScheme.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@magica11y/prefers-contrast@latest/dist/magica11y.prefersContrast.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@magica11y/prefers-reduced-motion@latest/dist/magica11y.prefersReducedMotion.min.js"></script>
         <script>
             (function(magica11y) {
@@ -79,15 +107,25 @@
 
                 const magica11yAPIMethods = [
                     'environmentBlending',
+                    'forcedColors',
+                    'invertedColors',
                     'lightLevel',
-                    'prefersReducedMotion',
+                    'prefersColorScheme',
+                    'prefersContrast',
+                    'prefersReducedMotion'
                 ];
 
                 const fallbackMessage = 'not available';
 
                 magica11yAPIMethods.forEach(function(magica11yAPIMethod) {
+                    const magica11yFn = magica11y[magica11yAPIMethod];
                     const resultElement = document.querySelector(`#${magica11yAPIMethod}Result`);
-                    resultElement.textContent = magica11y[magica11yAPIMethod].default() || fallbackMessage;
+
+                    if(magica11yFn) {
+                        resultElement.textContent = magica11yFn.default() || fallbackMessage;
+                    } else {
+                        resultElement.textContent = fallbackMessage;
+                    }
                 });
             })(window.magica11y);
         </script>
