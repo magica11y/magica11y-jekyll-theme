@@ -63,6 +63,12 @@
                             <a href="https://github.com/magica11y/light-level" class="button">View on GitHub</a>
                         </li>
                         <li>
+                            <img src="https://cdn.jsdelivr.net/npm/emojione-assets@3.0.0/png/128/1f317.png" alt="Last quarter moon" width="128" height="128" />
+                            <h3><code>prefers-color-scheme()</code></h3>
+                            <p>Your color scheme preference is <strong id="prefersColorSchemeResult"></strong>.</p>
+                            <a href="https://github.com/magica11y/prefers-color-scheme" class="button">View on GitHub</a>
+                        </li>
+                        <li>
                             <img src="https://cdn.jsdelivr.net/npm/emojione-assets@3.0.0/png/128/1f506.png" alt="High brightness" width="128" height="128" />
                             <h3><code>prefers-contrast()</code></h3>
                             <p>Your current contrast preference is <strong id="prefersContrastResult"></strong>.</p>
@@ -75,10 +81,10 @@
                             <a href="https://github.com/magica11y/prefers-reduced-motion" class="button">View on GitHub</a>
                         </li>
                         <li>
-                            <img src="https://cdn.jsdelivr.net/npm/emojione-assets@3.0.0/png/128/1f317.png" alt="Last quarter moon" width="128" height="128" />
-                            <h3><code>prefers-color-scheme()</code></h3>
-                            <p>Your color scheme preference is <strong id="prefersColorSchemeResult"></strong>.</p>
-                            <a href="https://github.com/magica11y/prefers-color-scheme" class="button">View on GitHub</a>
+                            <img src="https://cdn.jsdelivr.net/npm/emojione-assets@3.0.0/png/128/1f48e.png" alt="Gem" width="128" height="128" />
+                            <h3><code>prefers-reduced-transparency()</code></h3>
+                            <p>Your current transparency preference is <strong id="prefersReducedTransparencyResult"></strong>.</p>
+                            <a href="https://github.com/magica11y/prefers-reduced-transparency" class="button">View on GitHub</a>
                         </li>
                     </ul>
                 </section>
@@ -101,6 +107,7 @@
         <script src="https://cdn.jsdelivr.net/npm/@magica11y/prefers-color-scheme@latest/dist/magica11y.prefersColorScheme.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@magica11y/prefers-contrast@latest/dist/magica11y.prefersContrast.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@magica11y/prefers-reduced-motion@latest/dist/magica11y.prefersReducedMotion.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@magica11y/prefers-reduced-transparency@latest/dist/magica11y.prefersReducedTransparency.min.js"></script>
         <script>
             (function(magica11y) {
                 'use strict';
@@ -112,7 +119,8 @@
                     'lightLevel',
                     'prefersColorScheme',
                     'prefersContrast',
-                    'prefersReducedMotion'
+                    'prefersReducedMotion',
+                    'prefersReducedTransparency'
                 ];
 
                 const fallbackMessage = 'not available';
