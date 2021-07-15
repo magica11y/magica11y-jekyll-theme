@@ -1,4 +1,5 @@
 # magica11y-jekyll-theme
+> 🖌 A Jekyll theme based on the Stellar theme by HTML5 UP
 
 ## Installation
 

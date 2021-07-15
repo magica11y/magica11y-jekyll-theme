@@ -3,11 +3,11 @@
 Gem::Specification.new do |spec|
   spec.name          = "magica11y-jekyll-theme"
   spec.version       = "0.1.0"
-  spec.authors       = ["Rishabh Rao"]
-  spec.email         = ["rishabhsrao@gmail.com"]
+  spec.authors       = ["Rishabh"]
+  spec.email         = ["rishabh.ink@gmail.com"]
 
   spec.summary = "A Jekyll theme based on the ubuild blocks theme for Magica11y"
-  spec.homepage = "http://magica11y.github.io/magica11y"
+  spec.homepage = "http://magica11y.github.io"
 
   spec.license       = "MIT"
 
